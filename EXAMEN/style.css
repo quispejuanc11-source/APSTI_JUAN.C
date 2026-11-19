@@ -209,16 +209,14 @@ body {
 .badge.mantenimiento { background-color: #fef3c7; color: #92400e; }
 .badge.pendiente { background-color: #ffe4e6; color: #9f1239; }
 
-/* --- NUEVOS ESTILOS PARA RESALTAR --- */
 
-/* Resalta la columna de Fecha */
 .columna-neon {
     color: #8b5cf6 !important; 
     font-weight: bold;
     text-shadow: 0 0 5px rgba(139, 92, 246, 0.4);
 }
 
-/* Resalta tu nombre en el footer */
+
 .nombre-destacado {
     background-color: #8b5cf6;
     color: white;
@@ -228,7 +226,7 @@ body {
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
 }
 
-/* --- FIN DE NUEVOS ESTILOS --- */
+
 
 .footer {
     margin-top: auto;
