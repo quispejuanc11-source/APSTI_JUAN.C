@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="widget-espacial">
+        
+        <!-- SECCIÓN SUPERIOR (Clima Actual) -->
+        <div class="panel-superior">
+            <div class="ubicacion">
+                <h2>PERU ES CLAVE</h2>
+                <span class="estado-sistema"><i class="fa-solid fa-satellite"></i> SISTEMA EN LÍNEA</span>
+            </div>
+
+            <div class="clima-actual">
+                <div class="icono-principal">
+                    <i class="fa-solid fa-cloud-moon"></i>
+                </div>
+                <div class="temperatura">
+                    <h1>20°</h1>
+                    <span class="max-min">/ 17°</span>
+                    <p>Parcialmente Nublado</p>
+                </div>
+            </div>
+
+            <div class="detalles-clima">
+                <div class="detalle">
+                    <i class="fa-solid fa-wind"></i>
+                    <span>9 Km/h</span>
+                    <small>Viento</small>
+                </div>
+                <div class="detalle">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>93%</span>
+                    <small>Lluvia</small>
+                </div>
+                <div class="detalle">
+                    <i class="fa-solid fa-water"></i>
+                    <span>31%</span>
+                    <small>Humedad</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN INFERIOR (Pronóstico) -->
+        <div class="panel-inferior">
+            
+            <div class="dia-pronostico">
+                <span class="nombre-dia">LUN</span>
+                <i class="fa-solid fa-cloud icono-clima"></i>
+                <span class="condicion">Nublado</span>
+                <span class="temp">20° <span class="temp-baja">14°</span></span>
+            </div>
+
+            <div class="dia-pronostico">
+                <span class="nombre-dia">MAR</span>
+                <i class="fa-solid fa-snowflake icono-clima cian"></i>
+                <span class="condicion">Nieve</span>
+                <span class="temp">2° <span class="temp-baja">-5°</span></span>
+            </div>
+
+            <div class="dia-pronostico">
+                <span class="nombre-dia">MIÉ</span>
+                <i class="fa-solid fa-cloud-bolt icono-clima morado"></i>
+                <span class="condicion">Tormenta</span>
+                <span class="temp">15° <span class="temp-baja">14°</span></span>
+            </div>
+
+            <div class="dia-pronostico">
+                <span class="nombre-dia">JUE</span>
+                <i class="fa-solid fa-cloud-sun icono-clima amarillo"></i>
+                <span class="condicion">Parcial</span>
+                <span class="temp">18° <span class="temp-baja">17°</span></span>
+            </div>
+
+            <div class="dia-pronostico">
+                <span class="nombre-dia">VIE</span>
+                <i class="fa-solid fa-sun icono-clima amarillo"></i>
+                <span class="condicion">Soleado</span>
+                <span class="temp">25° <span class="temp-baja">10°</span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

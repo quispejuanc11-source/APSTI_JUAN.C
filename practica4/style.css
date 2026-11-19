@@ -1,0 +1,48 @@
+/* Centrar el icono en la pantalla para probarlo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor relativo para posicionar el contador encima */
+.contenedor-campana {
+    position: relative;
+    display: inline-block;
+    font-size: 60px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Animación de la campana sonando */
+.contenedor-campana i {
+    animation: campanear 2s infinite ease-in-out;
+    transform-origin: top center;
+}
+
+@keyframes campanear {
+    0%, 100% { transform: rotate(0); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-10deg); }
+    30% { transform: rotate(5deg); }
+    40% { transform: rotate(-5deg); }
+    50% { transform: rotate(0); }
+}
+
+/* Estilo del globo rojo */
+.contador {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: #ff3b30;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

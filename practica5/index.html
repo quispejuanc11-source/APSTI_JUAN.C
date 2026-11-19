@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión Neón</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tu hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <!-- Lado izquierdo: La lámpara y el robot -->
+        <div class="panel-izquierdo">
+            <div class="lampara-cable"></div>
+            <div class="lampara-pantalla"></div>
+            <div class="luz-haz"></div>
+            <div class="robot">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+        </div>
+
+        <!-- Lado derecho: El formulario -->
+        <div class="panel-derecho">
+            <h2>Bienvenido de nuevo.</h2>
+            <p class="subtitulo">Tira del cable para iluminar tu camino</p>
+
+            <form action="#">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Usuario">
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    INICIAR SESIÓN <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="separador">
+                <span>o</span>
+            </div>
+
+            <div class="botones-sociales">
+                <button class="btn-social">
+                    <i class="fa-brands fa-google"></i> Google
+                </button>
+                <button class="btn-social">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </button>
+            </div>
+
+            <p class="registro">
+                ¿No tienes cuenta? <a href="#">Regístrate</a>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

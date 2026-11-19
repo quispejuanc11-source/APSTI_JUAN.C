@@ -1,0 +1,264 @@
+/* Configuración básica y fondo de pantalla */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro con textura de agua/lluvia */
+    background: url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Contenedor principal estilo "Cristal" */
+.login-container {
+    display: flex;
+    width: 800px;
+    height: 450px;
+    background: rgba(20, 30, 25, 0.6); /* Fondo semitransparente */
+    backdrop-filter: blur(15px); /* Efecto de desenfoque de cristal */
+    border: 1px solid rgba(0, 255, 128, 0.2); /* Borde neón sutil */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 20px rgba(0, 255, 128, 0.1);
+    overflow: hidden;
+}
+
+/* ==================== LADO IZQUIERDO (LÁMPARA) ==================== */
+.panel-izquierdo {
+    width: 40%;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 255, 128, 0.1);
+    overflow: hidden;
+}
+
+/* El cable de la lámpara */
+.lampara-cable {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 60px;
+    background: #333;
+    transform: translateX(-50%);
+}
+
+/* La pantalla de la lámpara */
+.lampara-pantalla {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: #222;
+    border-radius: 40px 40px 0 0;
+    border-bottom: 5px solid #00ff80; /* Luz verde */
+    box-shadow: 0 0 20px #00ff80;
+}
+
+/* El haz de luz */
+.luz-haz {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 250px solid rgba(0, 255, 128, 0.15); /* Triángulo de luz */
+    pointer-events: none;
+}
+
+/* El robot */
+.robot {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 70px;
+    color: #00ff80;
+    text-shadow: 0 0 20px #00ff80;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+/* Animación para que el robot flote */
+@keyframes flotar {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -15px); }
+}
+
+/* ==================== LADO DERECHO (FORMULARIO) ==================== */
+.panel-derecho {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel-derecho h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.panel-derecho h2::first-letter {
+    color: #00ff80;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ff80;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 128, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #888;
+}
+
+.input-group input:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
+}
+
+/* Botón Principal Neón */
+.btn-principal {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #00c853, #00ff80);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.6);
+}
+
+/* Separador "o" */
+.separador {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.separador::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.separador span {
+    background: #18211c;
+    padding: 0 10px;
+    color: #888;
+    font-size: 12px;
+    position: relative;
+}
+
+/* Botones Sociales */
+.botones-sociales {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 255, 128, 0.5);
+}
+
+/* Enlace de registro */
+.registro {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.registro a {
+    color: #00ff80;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.registro a:hover {
+    text-decoration: underline;
+}
+
+/* Hacerlo responsive para celulares */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+    .panel-izquierdo {
+        display: none; /* Ocultamos la lámpara en móviles para que no ocupe espacio */
+    }
+    .panel-derecho {
+        width: 100%;
+        padding: 30px;
+    }
+}

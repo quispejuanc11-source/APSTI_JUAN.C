@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro tipo modo oscuro de Instagram */
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor de las historias */
+.contenedor-historias {
+    display: flex;
+    gap: 25px; /* Espacio entre cada historia */
+    padding: 20px;
+    overflow-x: auto; /* Permite scroll si hay muchas */
+    max-width: 100%;
+}
+
+/* --- CADA HISTORIA INDIVIDUAL --- */
+.historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto al pasar el ratón por la historia */
+.historia:hover {
+    transform: scale(1.05); /* Todo el bloque crece un 5% */
+}
+
+/* --- EL ANILLO DEGRADADO --- */
+.anillo-historia {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Este es el truco para el anillo de Instagram: degradado cónico */
+    background: conic-gradient(
+        from 180deg,
+        #feda75, /* Amarillo */
+        #fa7e1e, /* Naranja */
+        #d62976, /* Rosa */
+        #962fbf, /* Morado */
+        #4f5bd5, /* Azul */
+        #feda75  /* Vuelve al amarillo para cerrar el círculo */
+    );
+    padding: 4px; /* Grosor del anillo */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(214, 41, 118, 0.3); /* Brillo suave del anillo */
+}
+
+/* Efecto al pasar el ratón por el anillo */
+.historia:hover .anillo-historia {
+    box-shadow: 0 0 25px rgba(214, 41, 118, 0.8); /* El anillo brilla más */
+}
+
+/* Anillo especial para la "Historia Nueva" (Más grueso y brillante) */
+.anillo-historia.nueva {
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(250, 126, 30, 0.6);
+}
+
+/* --- LA FOTO DENTRO DEL ANILLO --- */
+.foto-contenedor {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #000; /* Fondo negro para que resalte */
+    padding: 3px; /* Separación entre el anillo y la foto */
+    overflow: hidden;
+}
+
+.foto-contenedor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta tu foto para que no se deforme */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom en la foto al pasar el ratón */
+.historia:hover .foto-contenedor img {
+    transform: scale(1.1); 
+}
+
+/* --- NOMBRE DE USUARIO --- */
+.nombre-usuario {
+    margin-top: 10px;
+    color: #ffffff; /* Texto blanco */
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 90px; /* Evita que nombres largos rompan el diseño */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Si el nombre es muy largo, pone "..." */
+    letter-spacing: 0.5px;
+}

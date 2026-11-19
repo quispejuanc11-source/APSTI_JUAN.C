@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checks Neón</title>
+    <style>
+        /* Estilos generales de la página */
+        body {
+            background-color: #121212; /* Fondo oscuro para resaltar el neón */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor de la lista */
+        .lista-neon {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Espacio entre cada opción */
+        }
+
+        /* Estilo de la etiqueta que envuelve todo */
+        .check-neon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #ffffff;
+            user-select: none; /* Evita que se seleccione el texto al hacer doble clic */
+        }
+
+        /* Ocultamos el checkbox cuadrado por defecto del navegador */
+        .check-neon input {
+            display: none;
+        }
+
+        /* La caja que se ve por defecto (vacía) */
+        .caja {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #00ffcc; /* Borde color neón cyan */
+            border-radius: 8px; /* Bordes redondeados */
+            margin-right: 15px; /* Separación del texto */
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* El símbolo del check (✓) dibujado con CSS */
+        .caja::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0); /* Empieza invisible y en miniatura */
+            color: #121212; /* Color oscuro para que contraste con el fondo neón */
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        /* EFECTO AL MARCAR LA CAJA */
+        .check-neon input:checked + .caja {
+            background-color: #00ffcc; /* El fondo se vuelve neón */
+            box-shadow: 0 0 15px #00ffcc; /* Brillo exterior */
+        }
+
+        /* EFECTO DEL CHECK AL MARCAR */
+        .check-neon input:checked + .caja::after {
+            transform: translate(-50%, -50%) scale(1); /* El check aparece y crece */
+        }
+
+        /* Un pequeño efecto extra al pasar el ratón */
+        .check-neon:hover .caja {
+            box-shadow: 0 0 8px #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lista-neon">
+        <!-- Opción 1 (Marcada por defecto con "checked") -->
+        <label class="check-neon">
+            <input type="checkbox" checked>
+            <span class="caja"></span>
+            <span class="texto">Four</span>
+        </label>
+
+        <!-- Opción 2 (Desmarcada) -->
+        <label class="check-neon">
+            <input type="checkbox">
+            <span class="caja"></span>
+            <span class="texto">Four</span>
+        </label>
+
+        <!-- Opción 3 (Desmarcada) -->
+        <label class="check-neon">
+            <input type="checkbox">
+            <span class="caja"></span>
+            <span class="texto">Four</span>
+        </label>
+    </div>
+
+</body>
+</html>

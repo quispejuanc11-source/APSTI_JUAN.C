@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subida de Archivos Neón</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-subida">
+        
+        <!-- Cabecera -->
+        <h1>SUBIR ARCHIVOS</h1>
+        <p class="subtitulo">Sube los archivos que quieras compartir con tu equipo</p>
+
+        <!-- Área de Drag & Drop -->
+        <div class="zona-arrastre">
+            <i class="fa-solid fa-cloud-arrow-up icono-nube"></i>
+            <p class="texto-arrastre">Arrastra y suelta los archivos aquí</p>
+            <p class="texto-o">O</p>
+            <button class="btn-examinar">Buscar Archivos</button>
+        </div>
+
+        <!-- Lista de archivos subidos -->
+        <h2>ARCHIVOS SUBIDOS</h2>
+        
+        <div class="lista-archivos">
+            
+            <!-- Archivo 1 (Cargando) -->
+            <div class="archivo-item">
+                <div class="icono-archivo word">
+                    <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div class="info-archivo">
+                    <span class="nombre-archivo">Portafolio en inglés.pdf</span>
+                    <!-- Barra de progreso -->
+                    <div class="barra-progreso-contenedor">
+                        <div class="barra-progreso" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <button class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Archivo 2 (Completado) -->
+            <div class="archivo-item">
+                <div class="icono-archivo word">
+                    <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div class="info-archivo">
+                    <span class="nombre-archivo">Portafolio en inglés.pdf</span>
+                    <span class="peso-archivo">60 Kb</span>
+                </div>
+                <button class="btn-cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

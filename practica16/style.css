@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro base */
+    background-color: #0d0d12; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-subida {
+    background-color: #1a1a24;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(157, 78, 221, 0.3); /* Borde morado sutil */
+    box-shadow: 
+        0 0 30px rgba(157, 78, 221, 0.1),
+        inset 0 0 20px rgba(157, 78, 221, 0.05); /* Brillo interior */
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.8);
+}
+
+.subtitulo {
+    text-align: center;
+    color: #a0a0b0;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* --- ZONA DE DRAG & DROP --- */
+.zona-arrastre {
+    border: 2px dashed #9d4edd; /* Borde punteado morado */
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(157, 78, 221, 0.05); /* Fondo morado muy tenue */
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el ratón por la zona */
+.zona-arrastre:hover {
+    background-color: rgba(157, 78, 221, 0.15);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3), inset 0 0 20px rgba(157, 78, 221, 0.1);
+    border-color: #c77dff; /* El morado se hace más brillante */
+}
+
+.icono-nube {
+    font-size: 60px;
+    color: #9d4edd;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 15px #9d4edd); /* Brillo en la nube */
+}
+
+.texto-arrastre {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.texto-o {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Botón Buscar Archivos */
+.btn-examinar {
+    background: linear-gradient(90deg, #9d4edd 0%, #7b2cbf 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+}
+
+.btn-examinar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.8);
+    text-shadow: 0 0 5px white;
+}
+
+/* --- LISTA DE ARCHIVOS --- */
+h2 {
+    font-size: 14px;
+    color: #a0a0b0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.lista-archivos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.archivo-item {
+    display: flex;
+    align-items: center;
+    background-color: #242430;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.archivo-item:hover {
+    border-color: rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.15);
+}
+
+/* Icono del archivo (Azul Word) */
+.icono-archivo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.icono-archivo.word {
+    background-color: #2b579a;
+    color: white;
+    box-shadow: 0 0 10px rgba(43, 87, 154, 0.5);
+}
+
+.info-archivo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-archivo {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.peso-archivo {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Barra de progreso */
+.barra-progreso-contenedor {
+    width: 100%;
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #9d4edd, #c77dff);
+    border-radius: 3px;
+    box-shadow: 0 0 10px #9d4edd;
+    /* Animación para simular que está cargando */
+    animation: cargando 2s infinite alternate;
+}
+
+@keyframes cargando {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Botón de la X para cerrar */
+.btn-cerrar {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    color: #ff4d4d;
+    text-shadow: 0 0 10px #ff4d4d;
+    transform: scale(1.2);
+}

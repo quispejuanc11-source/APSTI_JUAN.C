@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d0d12; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.slider-container {
+    position: relative;
+    width: 800px; 
+    max-width: 95%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(157, 78, 221, 0.3);
+    border: 2px solid rgba(157, 78, 221, 0.5);
+}
+
+/* --- LA PISTA --- */
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+/* --- SCROLLBAR NEÓN --- */
+.slider-track::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-track::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 0 20px;
+}
+.slider-track::-webkit-scrollbar-thumb {
+    background: #9d4edd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #9d4edd, inset 0 0 5px rgba(255,255,255,0.5);
+    cursor: grab;
+}
+.slider-track::-webkit-scrollbar-thumb:hover {
+    background: #c77dff;
+    box-shadow: 0 0 15px #c77dff, 0 0 25px #c77dff;
+}
+.slider-track {
+    scrollbar-width: thin;
+    scrollbar-color: #9d4edd rgba(0, 0, 0, 0.5);
+}
+
+/* --- CADA SLIDE --- */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    scroll-snap-align: center; 
+    position: relative; /* Importante para posicionar la imagen y el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo de tu imagen local */
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    z-index: 0;
+}
+
+/* Capa oscura sobre la imagen para que el texto se lea bien */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+
+/* Texto */
+.slide-content {
+    text-align: center;
+    color: white;
+    z-index: 2; /* Para que el texto quede por encima de la imagen y la capa oscura */
+    padding: 20px;
+}
+
+.slide-content h2 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(157, 78, 221, 0.6);
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    color: #eee;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* --- BOTONES DE NAVEGACIÓN --- */
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #9d4edd;
+    box-shadow: 0 0 15px #9d4edd;
+    transform: translateY(-3px);
+}

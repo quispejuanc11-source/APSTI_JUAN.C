@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro con un ligero tinte azulado para que resalte */
+    background-color: #0f171e; 
+    color: #ffffff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor central */
+.contenedor-hilo {
+    width: 100%;
+    max-width: 600px;
+    background-color: #192734;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* --- ESTILOS DEL COMENTARIO PRINCIPAL --- */
+.comentario-principal {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #38444d;
+}
+
+.comentario-principal:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Estilos para que las fotos locales se vean como avatares redondos */
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta la foto sin deformarla */
+    margin-right: 12px;
+    border: 2px solid #38444d;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.usuario {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.tiempo {
+    color: #8899a6;
+    font-size: 13px;
+}
+
+.texto {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #e1e8ed;
+    padding-left: 60px; /* Alinea el texto con el nombre */
+}
+
+/* --- ACCIONES (Corazón, comentario, etc) --- */
+.acciones {
+    display: flex;
+    gap: 25px;
+    padding-left: 60px;
+    margin-bottom: 15px;
+}
+
+.acciones span {
+    font-size: 14px;
+    color: #1da1f2; /* Azul tipo Twitter */
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.acciones span:hover {
+    color: #ffffff;
+}
+
+/* --- CONECTOR DEL HILO (LA LÍNEA VERTICAL) --- */
+.respuestas {
+    margin-left: 23px; /* Centra la línea justo debajo del avatar */
+    padding-left: 36px; /* Espacio para que el texto no toque la línea */
+    border-left: 2px solid #38444d; /* Aquí se dibuja la línea */
+    margin-top: -10px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- ESTILOS DE LAS RESPUESTAS --- */
+.comentario-respuesta {
+    position: relative;
+}
+
+/* La pequeña flecha horizontal que conecta la línea con el avatar */
+.comentario-respuesta::before {
+    content: '';
+    position: absolute;
+    top: 24px; 
+    left: -36px; 
+    width: 15px;
+    height: 2px;
+    background-color: #38444d;
+}
+
+/* Ajuste para no duplicar márgenes en las respuestas */
+.comentario-respuesta .texto,
+.comentario-respuesta .acciones {
+    padding-left: 0; 
+}

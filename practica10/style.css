@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo más oscuro aún para que el neón resalte al máximo */
+    background: radial-gradient(circle at center, #1a1a20 0%, #050505 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.contenedor-equipo {
+    display: flex;
+    gap: 40px; /* Un poco más de espacio para que los brillos no se choquen */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --- ESTILOS DE LA FLIP CARD --- */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 420px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    
+    /* BRILLO NEÓN BASE (Apagado/Reposo) */
+    box-shadow: 
+        0 0 10px rgba(255, 107, 0, 0.4), 
+        0 0 20px rgba(255, 107, 0, 0.2);
+}
+
+/* Cuando pasas el ratón, gira y el neón se vuelve mucho más intenso */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 
+        0 0 15px rgba(255, 107, 0, 0.8),
+        0 0 30px rgba(255, 107, 0, 0.6),
+        0 0 50px rgba(255, 107, 0, 0.4);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Borde naranja brillante */
+    border: 2px solid #ff6b00;
+}
+
+/* --- CARA FRONTAL --- */
+.flip-card-front {
+    background-color: #111;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Filtro para que la foto se vea un poco más oscura y resalte el marco */
+    filter: contrast(1.1) brightness(0.8); 
+}
+
+/* Etiqueta del número con efecto neón */
+.etiqueta-numero {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #111; /* Fondo oscuro */
+    color: #ff6b00; /* Texto naranja */
+    font-size: 22px;
+    font-weight: 900;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #ff6b00;
+    box-shadow: 0 0 10px #ff6b00, inset 0 0 10px #ff6b00; /* Neón por dentro y por fuera */
+    transform: skew(-10deg);
+    text-shadow: 0 0 5px #ff6b00;
+}
+
+/* --- CARA TRASERA --- */
+.flip-card-back {
+    background: #0a0a0a; /* Fondo casi negro */
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    /* Brillo interior neón */
+    box-shadow: inset 0 0 30px rgba(255, 107, 0, 0.3);
+}
+
+/* Título con efecto de letrero de neón */
+.flip-card-back h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff6b00,
+        0 0 40px #ff6b00; /* Múltiples sombras para simular tubo de neón */
+}
+
+.equipo {
+    font-size: 13px;
+    color: #ff6b00;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 107, 0, 0.5);
+}
+
+.estadisticas {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 107, 0, 0.3); /* Línea naranja tenue */
+    padding-bottom: 5px;
+}
+
+.titulo-stat {
+    font-weight: bold;
+    color: #888;
+    font-size: 13px;
+}
+
+.valor-stat {
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.frase {
+    font-size: 15px;
+    font-style: italic;
+    color: #ff6b00;
+    margin-top: auto;
+    text-shadow: 0 0 8px rgba(255, 107, 0, 0.6);
+}

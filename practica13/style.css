@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212; 
+    display: flex;
+    /* Cambiamos esto para que el menú esté centrado en la pantalla */
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;
+    /* Quitamos el padding-left: 20px para que no esté pegado a la izquierda */
+}
+
+/* --- CONTENEDOR DEL MENÚ --- */
+.menu-logros {
+    background-color: #1e1e24;
+    width: 80px; 
+    border-radius: 20px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+    
+    /* Aseguramos que crezca hacia la derecha (alineado a la izquierda de su caja) */
+    position: relative;
+}
+
+/* --- PERFIL --- */
+.perfil {
+    margin-bottom: 30px;
+}
+
+.contenedor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(45deg, #00f3ff, #ff00e5);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.contenedor-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1e1e24;
+}
+
+/* --- NAVEGACIÓN --- */
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    /* Alineamos los items a la izquierda para que el menú crezca hacia la derecha */
+    align-items: flex-start; 
+}
+
+/* --- ITEM DEL LOGRO (El botón) --- */
+.logro-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 50px;
+    width: 50px; 
+    /* Le damos un margen izquierdo para que el icono quede centrado en los 80px */
+    margin-left: 15px; 
+    border-radius: 12px;
+    background-color: transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    overflow: hidden; 
+    position: relative;
+    padding-left: 12px; 
+}
+
+/* El icono dentro del botón */
+.logro-item i {
+    font-size: 24px;
+    min-width: 25px; 
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+/* El texto (Nombre del logro) */
+.nombre-logro {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 15px;
+    white-space: nowrap; 
+    opacity: 0; 
+    transform: translateX(-20px); 
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+/* =========================================
+   EFECTOS AL PASAR EL RATÓN POR UN LOGRO
+   ========================================= */
+.logro-item:hover {
+    width: 220px; /* Se expande a lo ancho */
+    background-color: rgba(255, 255, 255, 0.05); 
+    transform: scale(1.05); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* El texto aparece */
+.logro-item:hover .nombre-logro {
+    opacity: 1; 
+    transform: translateX(0); 
+}
+
+/* --- COLORES DE LOS ICONOS Y SUS NEONES --- */
+.icono-oro { color: #ffd700; text-shadow: 0 0 10px #ffd700; }
+.logro-item:hover .icono-oro { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
+
+.icono-plata { color: #c0c0c0; text-shadow: 0 0 10px #c0c0c0; }
+.logro-item:hover .icono-plata { text-shadow: 0 0 20px #c0c0c0, 0 0 30px #c0c0c0; }
+
+.icono-fuego { color: #ff4500; text-shadow: 0 0 10px #ff4500; }
+.logro-item:hover .icono-fuego { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
+
+.icono-rayo { color: #00f3ff; text-shadow: 0 0 10px #00f3ff; }
+.logro-item:hover .icono-rayo { text-shadow: 0 0 20px #00f3ff, 0 0 30px #00f3ff; }
+
+.icono-corona { color: #ff00e5; text-shadow: 0 0 10px #ff00e5; }
+.logro-item:hover .icono-corona { text-shadow: 0 0 20px #ff00e5, 0 0 30px #ff00e5; }

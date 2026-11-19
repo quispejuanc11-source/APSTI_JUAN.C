@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro profundo para que resalte el neón */
+    background-color: #0d0d12; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor-principal {
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- CONTENEDOR DE AVATARES --- */
+.avatar-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+/* Estilo base de los avatares */
+.avatar {
+    width: 75px; /* Un poquito más grandes para ver bien las caras */
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* El borde es del color del fondo para crear la separación */
+    border: 4px solid #0d0d12; 
+    margin-left: -22px; /* Se superponen */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+/* --- COLORES NEÓN POR AVATAR --- */
+/* Avatar 1: Hinata (Cian) */
+.avatar.n1 {
+    box-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff; 
+}
+/* Avatar 2: Kageyama (Magenta) */
+.avatar.n2 {
+    box-shadow: 0 0 15px #ff00e5, 0 0 30px #ff00e5; 
+}
+/* Avatar 3: Kiyoko (Verde Neón) */
+.avatar.n3 {
+    box-shadow: 0 0 15px #00ff66, 0 0 30px #00ff66; 
+}
+/* Avatar 4 (Amarillo) */
+.avatar.n4 {
+    box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00; 
+}
+/* Avatar 5 (Naranja) */
+.avatar.n5 {
+    box-shadow: 0 0 15px #ff6b00, 0 0 30px #ff6b00; 
+}
+
+/* --- EFECTOS AL PASAR EL RATÓN --- */
+
+.avatar-group:hover .avatar {
+    margin-left: -10px; /* Se separan un poco */
+}
+
+.avatar:hover {
+    transform: scale(1.2) translateY(-10px); /* Salta hacia arriba */
+    z-index: 10; 
+    border-color: #ffffff; /* El borde se vuelve blanco puro */
+}
+
+/* Aumentamos el brillo individual al hacer hover */
+.avatar.n1:hover { box-shadow: 0 0 25px #00f3ff, 0 0 50px #00f3ff, 0 0 80px #00f3ff; }
+.avatar.n2:hover { box-shadow: 0 0 25px #ff00e5, 0 0 50px #ff00e5, 0 0 80px #ff00e5; }
+.avatar.n3:hover { box-shadow: 0 0 25px #00ff66, 0 0 50px #00ff66, 0 0 80px #00ff66; }
+.avatar.n4:hover { box-shadow: 0 0 25px #ffcc00, 0 0 50px #ffcc00, 0 0 80px #ffcc00; }
+.avatar.n5:hover { box-shadow: 0 0 25px #ff6b00, 0 0 50px #ff6b00, 0 0 80px #ff6b00; }
+
+
+/* --- EL CÍRCULO DEL CONTADOR (+12) --- */
+.avatar-contador {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #111;
+    color: #fff;
+    border: 4px solid #0d0d12;
+    margin-left: -22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    box-shadow: 0 0 15px #ffffff, 0 0 30px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.avatar-group:hover .avatar-contador {
+    margin-left: -10px;
+}
+
+.avatar-contador:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: #ffffff;
+    color: #000;
+    box-shadow: 0 0 30px #ffffff, 0 0 60px #ffffff;
+    z-index: 10;
+}
+
+/* Texto de abajo */
+.texto-hilo {
+    margin-top: 25px;
+    color: #00f3ff; 
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}

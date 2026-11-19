@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro para que resalte el neón */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f13 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.progreso-circular {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    /* Sombra exterior para dar efecto de elevación */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* El aro de colores base */
+.barra {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Gradiente con colores neón (Cian y Magenta) */
+    --p: 0;
+    background: conic-gradient(
+        #00f3ff 0deg, 
+        #ff00e5 calc(var(--p) * 3.6deg), 
+        #2a2a35 calc(var(--p) * 3.6deg) /* Color apagado para el resto */
+    );
+    animation: llenar 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* EFECTO CREATIVO: Aro de brillo que gira constantemente */
+.brillo-giratorio {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    /* Degradado transparente que crea un destello */
+    background: conic-gradient(from 0deg, transparent 70%, rgba(0, 243, 255, 0.8) 100%);
+    animation: girar 3s linear infinite;
+    z-index: -1; /* Detrás del aro principal */
+    filter: blur(5px); /* Le da un toque de luz difusa */
+}
+
+/* El centro oscuro */
+.centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 82%; 
+    height: 82%;
+    background-color: #121218; /* Centro oscuro */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Sombra interior para efecto de profundidad */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 
+                inset 0 0 5px rgba(0, 243, 255, 0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* El texto del porcentaje */
+.porcentaje {
+    font-size: 42px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff; /* Texto neón cian */
+    letter-spacing: 2px;
+}
+
+/* Texto pequeño de abajo */
+.texto-extra {
+    font-size: 11px;
+    color: #ff00e5; /* Texto neón magenta */
+    margin-top: 5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: parpadear 1.5s infinite; /* Hace que parpadee */
+}
+
+/* --- ANIMACIONES --- */
+
+/* Llenar la barra */
+@keyframes llenar {
+    0% {
+        --p: 0;
+    }
+    100% {
+        --p: 50; /* Cambia este número si quieres otro porcentaje */
+    }
+}
+
+/* Rotación del brillo */
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Parpadeo del texto "CARGANDO" */
+@keyframes parpadear {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}

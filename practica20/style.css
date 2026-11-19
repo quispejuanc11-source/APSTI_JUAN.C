@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo del espacio profundo */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+/* --- EL WIDGET COMPLETO --- */
+.widget-espacial {
+    width: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    
+    /* Borde de cristal con brillo morado/cian */
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    box-shadow: 
+        0 0 30px rgba(138, 43, 226, 0.2),
+        0 0 60px rgba(0, 255, 255, 0.1),
+        inset 0 0 20px rgba(0, 0, 0, 0.8);
+    
+    backdrop-filter: blur(20px);
+    background: rgba(15, 15, 25, 0.7);
+}
+
+/* Efecto de escáner sutil sobre todo el widget */
+.widget-espacial::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 4px; /* Líneas de escaneo */
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* --- SECCIÓN SUPERIOR (Clima Actual) --- */
+.panel-superior {
+    padding: 30px 25px;
+    background: linear-gradient(180deg, rgba(30, 30, 60, 0.8) 0%, rgba(15, 15, 25, 0) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ubicacion {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ubicacion h2 {
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #00ffff; /* Cian neón */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.estado-sistema {
+    font-size: 11px;
+    color: #8a2be2; /* Morado */
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Clima actual (Icono y Grados) */
+.clima-actual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.icono-principal i {
+    font-size: 75px;
+    color: #e0e0e0;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.temperatura {
+    text-align: left;
+}
+
+.temperatura h1 {
+    font-size: 65px;
+    font-weight: 300;
+    line-height: 1;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.max-min {
+    font-size: 24px;
+    color: #8899a6;
+}
+
+.temperatura p {
+    font-size: 14px;
+    color: #00ffff;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Fila de detalles (Viento, Lluvia, Humedad) */
+.detalles-clima {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.detalle i {
+    font-size: 18px;
+    color: #00ffff;
+    margin-bottom: 5px;
+}
+
+.detalle span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detalle small {
+    font-size: 10px;
+    color: #8899a6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- SECCIÓN INFERIOR (Pronóstico) --- */
+.panel-inferior {
+    padding: 20px 25px;
+    background: rgba(10, 10, 15, 0.9);
+}
+
+.dia-pronostico {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.dia-pronostico:last-child {
+    border-bottom: none;
+}
+
+/* Efecto Hover en cada día */
+.dia-pronostico:hover {
+    background: rgba(138, 43, 226, 0.1);
+    padding-left: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid transparent;
+}
+
+.nombre-dia {
+    width: 50px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.icono-clima {
+    font-size: 20px;
+    color: #e0e0e0;
+    width: 30px;
+    text-align: center;
+}
+
+/* Colores neón para los iconos del clima */
+.icono-clima.cian { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+.icono-clima.morado { color: #8a2be2; text-shadow: 0 0 10px #8a2be2; }
+.icono-clima.amarillo { color: #ffcc00; text-shadow: 0 0 10px #ffcc00; }
+
+.condicion {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #aaa;
+    margin-left: 15px;
+}
+
+.temp {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.temp-baja {
+    color: #666;
+    font-weight: normal;
+    margin-left: 5px;
+}

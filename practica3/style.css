@@ -1,0 +1,81 @@
+body {
+    background-color: #121212; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.titulo-tabla {
+    text-align: center;
+    color: #00ffcc; 
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mi-tabla {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #1e1e1e; 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15); 
+}
+
+.mi-tabla th {
+    background: linear-gradient(90deg, #1f1c2c 0%, #928dab 100%);
+    color: #00ffcc;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-bottom: 2px solid #00ffcc;
+}
+
+.mi-tabla td {
+    padding: 15px;
+    color: #e0e0e0; 
+    border-bottom: 1px solid #333;
+    font-size: 15px;
+}
+
+.mi-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.mi-tabla tbody tr:nth-child(even) {
+    background-color: #252525; 
+}
+
+.mi-tabla tbody tr {
+    transition: all 0.3s ease;
+}
+
+.mi-tabla tbody tr:hover {
+    background-color: #333333;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+    cursor: pointer;
+}
+
+.mi-tabla td:nth-child(3), 
+.mi-tabla td:nth-child(4) {
+    font-weight: bold;
+    color: #ff007f; 
+}
+
+.mi-tabla tbody tr:last-child td {
+    background-color: #1a1a1a;
+    font-weight: bold;
+    color: #00ffcc;
+    text-align: center;
+}
+
+.mi-tabla tbody tr:last-child td:empty {
+    background-color: #1e1e1e;
+}

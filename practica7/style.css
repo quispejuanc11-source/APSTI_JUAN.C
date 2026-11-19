@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo azul oscuro/real de tu imagen */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Contenedor flex para las 3 tarjetas */
+.contenedor-precios {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se acomode en celulares */
+    justify-content: center;
+}
+
+/* Estilo base de las tarjetas */
+.tarjeta {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 300px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease; /* Animación suave */
+    position: relative;
+}
+
+/* Efecto al pasar el ratón por cualquier tarjeta */
+.tarjeta:hover {
+    transform: translateY(-10px); /* Se levanta */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Tarjeta del centro (Destacada) */
+.tarjeta.destacada {
+    transform: scale(1.05); /* Es un poco más grande por defecto */
+    border: 2px solid #3b82f6; /* Borde azul */
+}
+
+.tarjeta.destacada:hover {
+    transform: scale(1.05) translateY(-10px); /* Mantiene el tamaño grande y se levanta */
+}
+
+/* Etiqueta "Más Popular" */
+.etiqueta {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+/* Títulos y precios */
+.tarjeta h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.precio {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.moneda {
+    font-size: 24px;
+    vertical-align: super;
+}
+
+.periodo {
+    font-size: 16px;
+    color: #64748b;
+    font-weight: normal;
+}
+
+.facturacion {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+/* Lista de características */
+.caracteristicas {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.caracteristicas li {
+    color: #475569;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.caracteristicas li i {
+    color: #10b981; /* Color verde para los checks */
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+/* Botones */
+.btn-precio {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    background: transparent;
+    color: #64748b;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-precio:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #334155;
+}
+
+/* Botón de la tarjeta destacada */
+.btn-destacado {
+    background: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.btn-destacado:hover {
+    background: #2563eb;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Diseño para celulares */
+@media (max-width: 950px) {
+    .tarjeta.destacada {
+        transform: scale(1); /* Quitamos el zoom en móviles */
+    }
+    .tarjeta.destacada:hover {
+        transform: translateY(-10px);
+    }
+}

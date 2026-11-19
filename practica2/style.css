@@ -1,0 +1,136 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0a1f0a;
+  overflow-x: hidden;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.card {
+  background: linear-gradient(145deg, #2b0000 0%, #660000 100%);
+  color: #ffffff;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.6), 
+              -4px 0 10px rgba(0, 0, 0, 0.4),
+              -5px 0 10px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card .header .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  margin-top: 5px;
+}
+
+.card .header .date {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.card:hover {
+  margin-right: 80px;
+  transform: rotate(3deg) translateY(-15px);
+  border: 1px solid #FFD700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 
+              -5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.card .header {
+  flex: 1;
+}
+
+.card .tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #FFD700;
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+card[class*="element"] {
+  margin-left: -100px;
+}
+
+.element-1:hover,
+.element-2:hover {
+  margin-left: -130px;
+}
+
+/* ESTILOS ESPECÍFICOS PARA LA TARJETA DE NAVIDAD (.element-4) */
+.element-4 {
+  background: linear-gradient(135deg, #a80000 0%, #003300 100%);
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.4);
+}
+
+.element-4 .header .date {
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.element-4 .header .title {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.element-4 .author a {
+  color: #ffffff;
+}
+
+.element-4 .tag {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.element-4:hover {
+  margin-right: 80px;
+  transform: rotate(3deg) translateY(-15px);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 60px rgba(0, 255, 0, 0.7);
+}
+
+.element-4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?q=80&w=1000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Fondo oscuro para que resalte el neón */
+    background-color: #1a1a24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* El contenedor con forma de píldora */
+.barra-busqueda {
+    position: relative;
+    width: 600px; /* Ancho de la barra */
+    max-width: 90%; /* Para que no se salga en celulares */
+    background-color: #121212; /* Fondo de la barra */
+    border-radius: 50px; /* Hace los bordes totalmente redondos */
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px 25px;
+    border: 2px solid #9d4edd; /* Borde morado */
+    
+    /* El truco del neón: sombras múltiples */
+    box-shadow: 
+        0 0 10px rgba(157, 78, 221, 0.5),
+        0 0 20px rgba(157, 78, 221, 0.3),
+        inset 0 0 10px rgba(157, 78, 221, 0.2);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.barra-busqueda:focus-within {
+    box-shadow: 
+        0 0 15px rgba(157, 78, 221, 0.8),
+        0 0 30px rgba(157, 78, 221, 0.5),
+        0 0 50px rgba(157, 78, 221, 0.2),
+        inset 0 0 15px rgba(157, 78, 221, 0.3);
+    border-color: #c77dff; /* El morado se vuelve más claro al enfocar */
+}
+
+/* El campo de texto */
+.barra-busqueda input {
+    flex: 1; /* Toma todo el espacio disponible a la izquierda */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff; /* Texto blanco */
+    font-size: 18px;
+    padding: 15px 10px;
+}
+
+/* Color del texto de ejemplo (placeholder) */
+.barra-busqueda input::placeholder {
+    color: #888;
+    font-weight: 300;
+}
+
+/* Contenedor de los iconos a la derecha */
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Separación entre iconos */
+    padding-right: 15px;
+}
+
+/* Estilo general de los iconos */
+.iconos i {
+    color: #9d4edd; /* Color morado base */
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por los iconos */
+.iconos i:hover {
+    color: #e0aaff; /* Morado más brillante */
+    transform: scale(1.2); /* Se hacen un poquito más grandes */
+    text-shadow: 0 0 10px #e0aaff; /* Brillo en el icono */
+}
+
+/* El icono de la lupa un poco más grande */
+.iconos .icono-lupa {
+    font-size: 22px;
+}
